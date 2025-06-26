@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Mentor;
 use Illuminate\Http\Request;
 use Gemini\Laravel\Facades\Gemini;
 
@@ -22,21 +23,21 @@ class CareerTestController extends Controller
     {
         $answers = $request->input('answers');
 
-        $prompt = "Suggest top career paths for a person with these interests: " . json_encode($answers);
+        $prompt = "Suggest short and practical career paths suitable for Myanmar and Thailand youth with these interests: " . json_encode($answers) . ". Keep suggestions short and realistic. End every suggestion with: 'Provided by Lan Pya'";
 
-        // Use the chat completion method, with messages array and model name:
-        $response = Gemini::chat()->complete([
-            'model' => 'gemini-1', // replace with your actual model if different
-            'messages' => [
-                ['role' => 'user', 'content' => $prompt],
-            ],
-        ]);
+        $response = Gemini::generativeModel(model: 'gemini-2.0-flash')
+            ->generateContent($prompt);
 
-        // Extract the content text from the response structure:
-        $suggestions = $response['choices'][0]['message']['content'] ?? 'No response from Gemini';
+        $suggestions = $response->text() ?? 'No suggestions returned.';
+        $mentors = Mentor::query()
+            ->where('language', app()->getLocale())
+            ->inRandomOrder()
+            ->take(3)
+            ->get();
 
         return view('career.results', [
             'suggestions' => $suggestions,
+            'mentors' => $mentors,
         ]);
     }
 
@@ -45,7 +46,7 @@ class CareerTestController extends Controller
         $prompt = "Compare average income of Software Engineer in Myanmar and Thailand";
 
         $response = Gemini::chat()->complete([
-            'model' => 'gemini-1',
+            'model' => 'gemini-2.0-flash',
             'messages' => [
                 ['role' => 'user', 'content' => $prompt],
             ],
@@ -58,3 +59,4 @@ class CareerTestController extends Controller
         ]);
     }
 }
+
