@@ -15,6 +15,11 @@
                 Take our short, free test to discover your strengths and get personalized career recommendations. <br>
                 <span class="font-bold text-blue-400">သင့်ရဲ့ အားသာချက်တွေကို ရှာဖွေပြီး ကိုယ်ပိုင် အလုပ်အကိုင် အကြံပြုချက်တွေ ရရှိဖို့ ကျွန်ုပ်တို့ရဲ့ အခမဲ့ စမ်းသပ်စစ်ဆေးမှုတိုလေးကို ဖြေဆိုလိုက်ပါ။</span>
             </p>
+            <div>
+                <a href="{{ route('career.form') }}" class="mt-4 inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition duration-300">
+                    Start Test
+                </a>
+            </div>
         </div>
     </div>
 
@@ -33,6 +38,12 @@
                 Browse our community of experienced mentors and find someone who can help guide you in your career. <br>
                 <span class="font-bold text-blue-400">ကျွန်ုပ်တို့ရဲ့ အတွေ့အကြုံရှိ လမ်းညွှန်ဆရာများအဖွဲ့အစည်းကို လေ့လာပြီး သင့်အသက်မွေးဝမ်းကြောင်းလုပ်ငန်းမှာ လမ်းညွှန်ပေးနိုင်မယ့်သူကို ရှာဖွေလိုက်ပါ။</span>
             </p>
+
+            <div>
+                <a href="{{ route('mentors.index') }}" class="mt-4 inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition duration-300">
+                    Search Mentors
+                </a>
+            </div>
         </div>
     </div>
 
@@ -43,7 +54,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
                 </svg>
                 <h2 class="text-xl font-semibold text-gray-900">
-                    <a href="{{ route('welcome') }}" class="hover:underline">Blog</a>
+                    <a href="{{ route('blog.index') }}" class="hover:underline">Blog</a>
                 </h2>
             </div>
 
@@ -51,6 +62,12 @@
                 Read our blog for the latest career advice, tips, and resources to help you achieve your goals. <br>
                 <span class="font-bold text-blue-400">သင့်ရဲ့ ရည်မှန်းချက်တွေ အောင်မြင်ဖို့ ကူညီပေးမယ့် နောက်ဆုံးပေါ် အလုပ်အကိုင်ဆိုင်ရာ အကြံဉာဏ်တွေ၊ နည်းလမ်းတွေနဲ့ အရင်းအမြစ်တွေအတွက် ကျွန်ုပ်တို့ရဲ့ ဘလော့ကို ဖတ်ရှုပါ။</span>
             </p>
+
+            <div>
+                <a href="{{ route('blog.index') }}" class="mt-4 inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition duration-300">
+                    Read Blogs
+                </a>
+            </div>
         </div>
     </div>
 
@@ -69,6 +86,12 @@
                 Listen to our podcasts and hear from experienced professionals and industry experts. <br>
                 <span class="font-bold text-blue-400">ကျွန်ုပ်တို့ရဲ့ ပေါ့ဒ်ကတ်စ်တွေကို နားဆင်ပြီး အတွေ့အကြုံရှိ ပညာရှင်တွေနဲ့ လုပ်ငန်းနယ်ပယ် ကျွမ်းကျင်သူတွေဆီကနေ နားဆင်ပါ။</span>
             </p>
+
+            <div>
+                <a href="{{ route('career.form') }}" class="mt-4 inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition duration-300">
+                    Start Listening
+                </a>
+            </div>
         </div>
     </div>
 </div>

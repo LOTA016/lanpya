@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> About | Lan Pya</title>
+    <title> Podcasts | Lan Pya</title>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -60,7 +60,7 @@
 
         <!-- Auth Buttons -->
         <div class="flex flex-col md:flex-row gap-2">
-            @auth
+             @auth
                 <a href="{{ url('/dashboard') }}" class="px-4 py-1.5 border border-gray-600 rounded-sm hover:border-gray-500 text-gray-200">
                     Dashboard
                 </a>
@@ -86,25 +86,48 @@
     </script>
 
     <div class="w-full max-w-6xl text-center">
-        <!-- Hero Section -->
-        <div class="mt-16 mb-16">
-            <h1 class="{{ app()->getLocale() === 'my' ? 'text-5xl leading-normal' : 'text-6xl' }} md:{{ app()->getLocale() === 'my' ? 'text-6xl' : 'text-7xl' }} font-semibold text-blue-400 mb-4 drop-shadow-lg">
-                About Lan Pya
-            </h1>
+        <!-- Podcasts -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+            <!-- Podcast 1 -->
+            <div class="bg-gray-900 border border-gray-700 rounded-lg overflow-hidden shadow-lg">
+                <img src="https://source.unsplash.com/600x400/?podcast,career" alt="Career Journey Podcast" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-blue-400 mb-2">Career Journey: From Student to CEO</h3>
+                    <p class="text-gray-300 mb-4">Explore inspiring career stories from young professionals who rose through challenges to build their dream careers.</p>
+                    <audio controls class="w-full">
+                        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </div>
 
-            <p class="text-2xl md:text-3xl text-gray-300 mb-8 font-normal">
-                Empowering the Future of Myanmar Youth
-            </p>
+            <!-- Podcast 2 -->
+            <div class="bg-gray-900 border border-gray-700 rounded-lg overflow-hidden shadow-lg">
+                <img src="https://source.unsplash.com/600x400/?interview,career" alt="Tech Career Talk" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-blue-400 mb-2">Breaking Into Tech: First Steps</h3>
+                    <p class="text-gray-300 mb-4">A beginner’s guide to entering the tech world — hear from developers, designers, and project managers across Asia.</p>
+                    <audio controls class="w-full">
+                        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </div>
 
-            <p class="text-lg text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed">
-                Lan Pya is a youth-led initiative started by a group of passionate young people from Myanmar. 
-                Born out of a shared vision for a better future, we believe that career development and access 
-                to learning resources are critical to uplifting the next generation. <br><br>
-                Our mission is to enhance the employability of Myanmar youth by providing knowledge, 
-                opportunities, and a platform for growth. Whether it’s through blogs, podcasts, learning tools, 
-                or real-world guidance — Lan Pya is committed to building a brighter path forward, together.
-            </p>
+            <!-- Podcast 3 -->
+            <div class="bg-gray-900 border border-gray-700 rounded-lg overflow-hidden shadow-lg">
+                <img src="https://source.unsplash.com/600x400/?startup,youth" alt="Startup Career Advice" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-blue-400 mb-2">Startup Life: Lessons from Founders</h3>
+                    <p class="text-gray-300 mb-4">Hear from young Myanmar entrepreneurs sharing behind-the-scenes insights on building meaningful startups.</p>
+                    <audio controls class="w-full">
+                        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </div>
         </div>
+
 
 
         <!-- Call to Action Section -->

@@ -11,6 +11,22 @@
                 <input type="text" name="answers[]" class="w-full p-2 rounded border mb-4 shadow-md" required>
             </div>
         @endforeach
+        <div class="mb-6">
+            <label for="language" class="block text-lg font-semibold text-gray-700 mb-2">
+                Preferred Language (မည်သည့်ဘာသာနှင့် ရလဒ်ယူလိုပါသလဲ)
+            </label>
+            <div class="flex items-center space-x-6">
+                <label class="inline-flex items-center">
+                    <input type="radio" name="language" value="en" class="form-radio text-indigo-600" checked>
+                    <span class="ml-2">English</span>
+                </label>
+                <label class="inline-flex items-center">
+                    <input type="radio" name="language" value="my" class="form-radio text-indigo-600">
+                    <span class="ml-2">Burmese (မြန်မာ)</span>
+                </label>
+            </div>
+        </div>
+
         <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded animate__animated animate__fadeInUp">Submit</button>
 
         <!-- Loading Spinner -->

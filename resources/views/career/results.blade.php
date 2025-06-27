@@ -28,5 +28,12 @@
                 <p>No mentors found for your selected language.</p>
             @endforelse
         </div>
+
+        <div class="text-center mt-6">
+            <a href="{{ route('career.income') }}" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                {{ $language === 'my' ? 'သင့်အလုပ်အကိုင်အတွက် ဝင်ငွေကို နှိုင်းယှဉ်ကြည့်မယ်' : 'Compare Income for Suggested Careers' }}
+            </a>
+        </div>
+
     </div>
 </x-app-layout>

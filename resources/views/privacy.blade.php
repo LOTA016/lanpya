@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> About | Lan Pya</title>
+    <title> Privacy | Lan Pya</title>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -60,7 +60,7 @@
 
         <!-- Auth Buttons -->
         <div class="flex flex-col md:flex-row gap-2">
-            @auth
+             @auth
                 <a href="{{ url('/dashboard') }}" class="px-4 py-1.5 border border-gray-600 rounded-sm hover:border-gray-500 text-gray-200">
                     Dashboard
                 </a>
@@ -86,23 +86,26 @@
     </script>
 
     <div class="w-full max-w-6xl text-center">
-        <!-- Hero Section -->
-        <div class="mt-16 mb-16">
-            <h1 class="{{ app()->getLocale() === 'my' ? 'text-5xl leading-normal' : 'text-6xl' }} md:{{ app()->getLocale() === 'my' ? 'text-6xl' : 'text-7xl' }} font-semibold text-blue-400 mb-4 drop-shadow-lg">
-                About Lan Pya
-            </h1>
-
-            <p class="text-2xl md:text-3xl text-gray-300 mb-8 font-normal">
-                Empowering the Future of Myanmar Youth
+        <!-- Privacy -->
+        <div class="mt-16 p-12 bg-gray-800 bg-opacity-80 rounded-2xl border border-gray-600">
+            <h2 class="text-3xl font-semibold text-blue-400 mb-4">Privacy Policy</h2>
+            <p class="text-gray-300 text-lg mb-8">
+                At Lan Pya, we prioritize the privacy of our users. This Privacy Policy outlines the types of information we collect and how we use it to enhance your experience and provide high-quality results.
             </p>
-
-            <p class="text-lg text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed">
-                Lan Pya is a youth-led initiative started by a group of passionate young people from Myanmar. 
-                Born out of a shared vision for a better future, we believe that career development and access 
-                to learning resources are critical to uplifting the next generation. <br><br>
-                Our mission is to enhance the employability of Myanmar youth by providing knowledge, 
-                opportunities, and a platform for growth. Whether it’s through blogs, podcasts, learning tools, 
-                or real-world guidance — Lan Pya is committed to building a brighter path forward, together.
+            <h3 class="text-2xl font-semibold text-blue-400 mb-4">Information Collection</h3>
+            <p class="text-gray-300 text-lg mb-4">
+                We collect personal information that you provide to us voluntarily, such as your name, email address, and any other details you share when you register or contact us. We also gather data on your usage patterns to understand how you interact with our services.
+            </p>
+            <h3 class="text-2xl font-semibold text-blue-400 mb-4">Usage of Information</h3>
+            <p class="text-gray-300 text-lg mb-4">
+                The information we collect is used to deliver and improve our services, ensuring you receive a personalized and efficient experience. We use data analytics to refine our offerings and provide content that is relevant and beneficial to you.
+            </p>
+            <h3 class="text-2xl font-semibold text-blue-400 mb-4">Data Security</h3>
+            <p class="text-gray-300 text-lg mb-4">
+                Lan Pya employs strict security measures to protect your information from unauthorized access. We are committed to maintaining the confidentiality and integrity of your personal data.
+            </p>
+            <p class="text-gray-300 text-lg">
+                For further details, please contact us directly. Your trust is important to us, and we are here to answer any questions you may have regarding our privacy practices.
             </p>
         </div>
 

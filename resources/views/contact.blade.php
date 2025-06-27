@@ -60,14 +60,12 @@
 
         <!-- Auth Buttons -->
         <div class="flex flex-col md:flex-row gap-2">
-            @auth
+             @auth
                 <a href="{{ url('/dashboard') }}" class="px-4 py-1.5 border border-gray-600 rounded-sm hover:border-gray-500 text-gray-200">
                     Dashboard
                 </a>
             @else
-                <a href="{{ route('login') }}" class="hover:text-blue-400 text-gray-200">
-                    Log in
-                </a>
+                <a href="{{ route('login') }}" class="px-4 py-1.5 hover:text-blue-400">Log in</a>
                 @if (Route::has('register'))
                     <a href="{{ route('register') }}" class="px-4 py-1.5 border border-gray-600 rounded-sm hover:border-gray-500 text-gray-200">
                         Register

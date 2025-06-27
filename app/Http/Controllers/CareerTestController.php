@@ -34,22 +34,40 @@ class CareerTestController extends Controller
 
         return view('career.form', compact('questions'));
     }
-
-    public function analyze(Request $request)
+   public function analyze(Request $request)
     {
         $answers = $request->input('answers');
+        $language = $request->input('language', 'en');
 
-        $prompt = "Suggest short and practical career paths suitable for Myanmar and Thailand youth with these interests: " . json_encode($answers) . ". Keep suggestions short and realistic. End every suggestion with: 'Provided by Lan Pya'";
+        // Prompt for career suggestions
+        $careerPrompt = match ($language) {
+            'my' => "အောက်ဖော်ပြပါ အဖြေများအပေါ် မူတည်ပြီး မြန်မာနိုင်ငံ သို့မဟုတ် ထိုင်းနိုင်ငံရှိ လူငယ်တစ်ဦးအတွက် အသုံးဝင်ပြီး တကယ်ဖြစ်နိုင်သော အသက်မွေးဝမ်းကြောင်းနည်းလမ်းများ အတိုချုံးအဖြစ် အကြံပြုပါ။ ... အဖြေများ: " . json_encode($answers),
+            default => "Based on the following answers... Answers: " . json_encode($answers),
+        };
 
-        $response = Gemini::generativeModel(model: 'gemini-2.0-flash')
-            ->generateContent($prompt);
-
+        $response = Gemini::generativeModel(model: 'gemini-2.0-flash')->generateContent($careerPrompt);
         $suggestions = $response->text() ?? 'No suggestions returned.';
-        $interests = $request->input('answers'); // e.g. ['coding', 'data']
+
+        // Extract job titles
+        $careers = collect(explode("\n", $suggestions))
+            ->filter(fn($line) => preg_match('/^[0-9]+\./', $line))
+            ->map(fn($line) => trim(preg_replace('/^[0-9]+\.\s*/', '', explode('(', $line)[0])))
+            ->filter()
+            ->values()
+            ->all();
+
+        // Save for later income comparison
+        session([
+            'career_suggestions_raw' => $suggestions,
+            'career_titles' => $careers,
+            'career_language' => $language,
+        ]);
+
+        // Get mentors
         $mentors = Mentor::query()
-            ->where('language', app()->getLocale())
-            ->where(function($query) use ($interests) {
-                foreach ($interests as $interest) {
+            ->where('language', $language)
+            ->where(function ($query) use ($answers) {
+                foreach ($answers as $interest) {
                     $query->orWhere('expertise', 'like', "%{$interest}%")
                         ->orWhere('industry', 'like', "%{$interest}%")
                         ->orWhere('profession', 'like', "%{$interest}%");
@@ -61,25 +79,36 @@ class CareerTestController extends Controller
         return view('career.results', [
             'suggestions' => $suggestions,
             'mentors' => $mentors,
+            'language' => $language,
         ]);
     }
+
 
     public function compareIncome()
     {
-        $prompt = "Compare average income of Software Engineer in Myanmar and Thailand";
+        $careers = session('career_titles', []);
+        $language = session('career_language', 'en');
 
-        $response = Gemini::chat()->complete([
-            'model' => 'gemini-2.0-flash',
-            'messages' => [
-                ['role' => 'user', 'content' => $prompt],
-            ],
-        ]);
+        if (empty($careers)) {
+            return redirect()->route('career.form')->with('error', 'No career data found.');
+        }
 
-        $data = $response['choices'][0]['message']['content'] ?? 'No data from Gemini';
+        $careerList = implode(', ', $careers);
+
+        $prompt = match ($language) {
+            'my' => "အောက်ပါ အလုပ်အကိုင်များအတွက် မြန်မာနှင့် ထိုင်းနိုင်ငံတို့ရှိ ပျမ်းမျှလစဉ်ဝင်ငွေကို MMK နှင့် THB ဖြင့် ရှင်းလင်းလွယ်ကူသောပုံစံဖြင့် နှိုင်းယှဉ်ပြပါ။ အလုပ်အကိုင်များ: $careerList",
+            default => "Compare the average monthly income in MMK and THB for the following careers in Myanmar and Thailand: $careerList. Present in a clear list.",
+        };
+
+        $response = Gemini::generativeModel(model: 'gemini-2.0-flash')->generateContent($prompt);
+        $data = $response->text() ?? 'No income data available.';
 
         return view('career.income', [
             'data' => $data,
+            'language' => $language,
         ]);
     }
+
 }
+
 
