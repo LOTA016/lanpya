@@ -126,5 +126,20 @@
             </div>
         </div>
     </div>
+    <br><br><hr><br>
+    <div class="text-base tracking-wide">
+        &copy; 2025 <span class="font-semibold text-blue-400">Lan Pya</span>. All rights reserved.
+    </div>
+
+    <div class="mt-4 text-sm leading-relaxed">
+        <p class="italic text-gray-400">"The best way to predict your future is to create it."</p>
+        <p class="font-semibold text-blue-300 mt-1">— Abraham Lincoln</p>
+    </div>
+
+    <div class="mt-6 flex justify-center gap-4 text-gray-400 text-sm">
+        <a href="{{ route('privacy') }}" class="hover:text-blue-400 transition">Privacy Policy</a>
+        <a href="{{ route('blog.index') }}" class="hover:text-blue-400 transition">Blogs</a>
+        <a href="{{ route('contact') }}" class="hover:text-blue-400 transition">Contact</a>
+    </div>
 </body>
 </html>

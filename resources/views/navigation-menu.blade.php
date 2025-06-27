@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <x-application-mark class="block h-9 w-auto" />
+                        <img src="{{ asset('assets/logo/landscape-lanpya.png') }}" alt="Lan Pya Logo" class="block h-12 w-auto sm:h-16 md:h-20 lg:h-24 xl:h-28 2xl:h-32">
                     </a>
                 </div>
 
