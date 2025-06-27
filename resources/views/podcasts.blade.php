@@ -87,48 +87,54 @@
 
     <div class="w-full max-w-6xl text-center">
         <!-- Podcasts -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-            <!-- Podcast 1 -->
-            <div class="bg-gray-900 border border-gray-700 rounded-lg overflow-hidden shadow-lg">
-                <img src="https://source.unsplash.com/600x400/?podcast,career" alt="Career Journey Podcast" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold text-blue-400 mb-2">Career Journey: From Student to CEO</h3>
-                    <p class="text-gray-300 mb-4">Explore inspiring career stories from young professionals who rose through challenges to build their dream careers.</p>
-                    <audio controls class="w-full">
-                        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
+        <div class="relative">
+            <!-- Glass Blur Overlay with Note (covering all podcasts) -->
+            <div class="absolute inset-0 z-10 bg-black/40 backdrop-blur-sm flex items-center justify-center text-white text-lg font-semibold rounded-lg">
+            Note: This feature is coming soon.
             </div>
 
-            <!-- Podcast 2 -->
-            <div class="bg-gray-900 border border-gray-700 rounded-lg overflow-hidden shadow-lg">
-                <img src="https://source.unsplash.com/600x400/?interview,career" alt="Tech Career Talk" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold text-blue-400 mb-2">Breaking Into Tech: First Steps</h3>
-                    <p class="text-gray-300 mb-4">A beginner’s guide to entering the tech world — hear from developers, designers, and project managers across Asia.</p>
-                    <audio controls class="w-full">
-                        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
+            <!-- Podcasts Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 z-0">
+                <!-- Podcast 1 -->
+                <div class="bg-gray-900 border border-gray-700 rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://imgs.search.brave.com/UVSa4eaXhsp7AfFPx3NC6uOnsSuUNbL99jR-XdhgqZs/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jcmVh/dG9ycy5zcG90aWZ5/LmNvbS9fbmV4dC9p/bWFnZT91cmw9L19u/ZXh0L3N0YXRpYy9t/ZWRpYS9ydGItZ3Jv/d3RoLmFkZDg1Y2E1/LndlYnAmdz0zODQw/JnE9NzU" alt="Career Journey Podcast" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-blue-400 mb-2">Career Journey: From Student to CEO</h3>
+                        <p class="text-gray-300 mb-4">Explore inspiring career stories from young professionals who rose through challenges to build their dream careers.</p>
+                        <audio controls class="w-full">
+                            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Podcast 3 -->
-            <div class="bg-gray-900 border border-gray-700 rounded-lg overflow-hidden shadow-lg">
-                <img src="https://source.unsplash.com/600x400/?startup,youth" alt="Startup Career Advice" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold text-blue-400 mb-2">Startup Life: Lessons from Founders</h3>
-                    <p class="text-gray-300 mb-4">Hear from young Myanmar entrepreneurs sharing behind-the-scenes insights on building meaningful startups.</p>
-                    <audio controls class="w-full">
-                        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
+                <!-- Podcast 2 -->
+                <div class="bg-gray-900 border border-gray-700 rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://imgs.search.brave.com/yKS9EKRS2g-CbNv29k843ZnoS9aepNMgMdq39wt9cOg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdG9y/YWdlLmdvb2dsZWFw/aXMuY29tL2dvb2Rw/b2RzLWltYWdlcy1i/dWNrZXQvZXBpc29k/ZV9pbWFnZXMvM2Zh/Yzc1ODk4MWM1ZDg4/YTY5MDE3YzYwZjVl/MTA0NjdmYjc2YTc5/MzllNjMzMmFiN2U3/MWI2YWQyY2Q0OWQ2/ZC5hdmlm" alt="Tech Career Talk" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-blue-400 mb-2">Breaking Into Tech: First Steps</h3>
+                        <p class="text-gray-300 mb-4">A beginner’s guide to entering the tech world — hear from developers, designers, and project managers across Asia.</p>
+                        <audio controls class="w-full">
+                            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                </div>
+
+                <!-- Podcast 3 -->
+                <div class="bg-gray-900 border border-gray-700 rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://imgs.search.brave.com/FB4xFKhpGsCobFRVYOTKMWZ-fz3F5S_VTrXQ954z1Zk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/cmFkaW8ubmV0L3Bv/ZGNhc3QtaW1hZ2Vz/LzE3NS90aGUtam9y/ZGFuLWItcGV0ZXJz/b24tcG9kY2FzdC5q/cGVnP3ZlcnNpb249/YmJmNGU1NTg0ZGM5/NmQzZDE3Yzc1MTky/ZmFiMmNmOTY" alt="Startup Career Advice" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-blue-400 mb-2">Startup Life: Lessons from Founders</h3>
+                        <p class="text-gray-300 mb-4">Hear from young Myanmar entrepreneurs sharing behind-the-scenes insights on building meaningful startups.</p>
+                        <audio controls class="w-full">
+                            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
                 </div>
             </div>
         </div>
-
-
 
         <!-- Call to Action Section -->
         <div class="mt-16 p-12 bg-gray-800 bg-opacity-80 rounded-2xl border border-gray-600">
