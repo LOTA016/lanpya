@@ -82,14 +82,18 @@
         </div>
         <!-- Hero Section -->
         <div class="max-w-4xl mx-auto py-12 px-4 text-gray-300">
-            <h1 class="text-4xl font-bold text-blue-400 mb-4">Why Career Planning is Vital for Myanmar Youth</h1>
-            <p class="mb-6 text-lg">In Myanmar, the youth population is growing rapidly, with more than 70% of the population below the age of 30. This presents a significant opportunity for the country to harness the potential of its young people to drive economic growth and social development. However, without proper guidance and support, many young people struggle to find fulfilling and sustainable career paths.</p>
+            <h1 class="text-4xl font-bold text-blue-400 mb-4">Free Online Courses for Beginners</h1>
+            <p class="mb-6 text-lg">If you're just starting your learning journey, here are free online platforms where you can learn everything from coding to design:</p>
 
-            <p class="mb-4">Career planning is a vital component of this process. By learning to identify strengths, explore opportunities, and set realistic goals, youth can build confidence and focus. Early planning encourages them to acquire useful skills, pursue higher education, or find vocational training that matches their passion.</p>
+            <ul class="list-disc list-inside mb-6 space-y-2">
+                <li><strong>Coursera</strong> – Offers courses from universities like Yale and Stanford.</li>
+                <li><strong>edX</strong> – Learn from MIT, Harvard, and more.</li>
+                <li><strong>Sololearn</strong> – Great for learning programming languages interactively.</li>
+                <li><strong>FreeCodeCamp</strong> – Learn coding with hands-on projects.</li>
+                <li><strong>Skillshare</strong> – Learn creative skills like video editing and graphic design.</li>
+            </ul>
 
-            <p class="mb-4">Moreover, career development supports social and economic mobility, empowering youth to contribute meaningfully to their communities. As young people gain skills and experience, they are more likely to participate in the formal economy, pay taxes, and contribute to the development of their communities. This, in turn, can help to break the cycle of poverty and inequality, promoting a more equitable and prosperous society.</p>
-
-            <p class="mb-4">Despite its importance, career planning is often overlooked in Myanmar. Many young people lack access to career guidance and support, leaving them to navigate the complex and rapidly changing job market on their own. This can lead to a mismatch between the skills and qualifications that young people acquire, and the needs of the labor market.</p>
+            <p>All you need is an internet connection and motivation!</p>
 
             <p class="mt-6 text-sm text-gray-400">Published: June 2025</p>
         </div>
@@ -115,6 +119,22 @@
                 @endguest
             </div>
         </div>
+    </div>
+    
+    <br><br><hr><br>
+    <div class="text-base tracking-wide">
+        &copy; 2025 <span class="font-semibold text-blue-400">Lan Pya</span>. All rights reserved.
+    </div>
+
+    <div class="mt-4 text-sm leading-relaxed">
+        <p class="italic text-gray-400">"The best way to predict your future is to create it."</p>
+        <p class="font-semibold text-blue-300 mt-1">— Abraham Lincoln</p>
+    </div>
+
+    <div class="mt-6 flex justify-center gap-4 text-gray-400 text-sm">
+        <a href="{{ route('privacy') }}" class="hover:text-blue-400 transition">Privacy Policy</a>
+        <a href="{{ route('blog.index') }}" class="hover:text-blue-400 transition">Blogs</a>
+        <a href="{{ route('contact') }}" class="hover:text-blue-400 transition">Contact</a>
     </div>
 </body>
 </html>

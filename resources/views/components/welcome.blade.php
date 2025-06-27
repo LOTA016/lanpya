@@ -78,7 +78,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
                 </svg>
                 <h2 class="text-xl font-semibold text-gray-900">
-                    <a href="{{ route('welcome') }}" class="hover:underline">Podcasts</a>
+                    <a href="{{ route('podcasts') }}" class="hover:underline">Podcasts</a>
                 </h2>
             </div>
 
@@ -88,7 +88,7 @@
             </p>
 
             <div>
-                <a href="{{ route('career.form') }}" class="mt-4 inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition duration-300">
+                <a href="{{ route('podcasts') }}" class="mt-4 inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition duration-300">
                     Start Listening
                 </a>
             </div>
