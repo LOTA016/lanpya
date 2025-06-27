@@ -13,20 +13,17 @@ class SetLocale
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle($request, Closure $next)
-    {
-        $locale = $request->route('locale'); // ← get from URL
-        if (in_array($locale, ['en', 'my'])) {
-            app()->setLocale($locale);
-        } else {
-            app()->setLocale(config('app.locale'));
-        }
 
+     public function handle($request, Closure $next)
+    {
+        $locale = $request->route('locale');
+        
+        if (in_array($locale, ['en', 'my'])) {
+            App::setLocale($locale);
+            Session::put('locale', $locale);
+        }
+        
         return $next($request);
     }
 
-
 }
-
-logger('🟢 SetLocale Middleware ran. Locale = ' . $locale);
-

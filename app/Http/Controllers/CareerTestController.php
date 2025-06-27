@@ -25,9 +25,9 @@ class CareerTestController extends Controller
             
             '7. What are your strongest skills or talents? (သင်၏ အင်အားရှိဆုံး ကျွမ်းကျင်မှုများ သို့မဟုတ် စွမ်းရည်များက ဘာတွေလဲ? )',
             
-            '8. How important is work-life balance to you? (သင့်အတွက် အလုပ်နှင့်ဘဝ ညီမှျတာက ဘယ်လောက် အရေးကြီးလဲ? )',
+            '8. How important is work-life balance to you? (သင့်အတွက် အလုပ်နှင့်ဘဝ ညီမျှတာက ဘယ်လောက် အရေးကြီးလဲ? )',
             
-            '9. Are you willing to pursue additional education or training for your career? (သင့်အသက်မွေးဝမ်းကြောင်းအတွက် နောက်ထပ် ပညာရေး သို့မဟုတ် လေ့ကျင့်ရေး လုပ်ဆောင်ရန် စিတ်ရှိလား? )',
+            '9. Are you willing to pursue additional education or training for your career? (သင့်အသက်မွေးဝမ်းကြောင်းအတွက် နောက်ထပ် ပညာရေး သို့မဟုတ် လေ့ကျင့်ရေး လုပ်ဆောင်ရန် စိတ်ရှိလား? )',
             
             '10. What kind of impact do you want to make in society through your career? (သင့်အသက်မွေးဝမ်းကြောင်းမှတစ်ဆင့် လူ့အဖွဲ့အစည်းတွင် ဘယ်လို သြဇာလွှမ်းမိုးမှု ပြုလုပ်ချင်လဲ? )'
         ];

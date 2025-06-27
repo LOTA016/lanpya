@@ -28,35 +28,68 @@
     @endif
 </head>
 <body class="font-sans leading-relaxed text-gray-200 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 min-h-screen flex flex-col items-center justify-center p-8">
-    <header class="w-full max-w-4xl mb-8 text-sm flex items-center justify-between">
-        @if (Route::has('login'))
-            <div class="flex items-center gap-4">
-                <!-- Language Selector -->
+    <!-- Responsive Header -->
+    <header class="w-full max-w-6xl mx-auto px-4 py-4 text-sm">
+    @if (Route::has('login'))
+        <!-- Top bar -->
+        <div class="flex justify-between items-center md:flex-row flex-wrap gap-4">
+            <!-- Logo or title -->
+            <div class="text-lg font-semibold text-blue-400">Lan Pya</div>
+
+            <!-- Hamburger button (mobile only) -->
+            <button id="hamburger-button" class="md:hidden p-2 rounded-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-offset-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Collapsible Menu -->
+        <div id="mobile-menu" class="hidden md:flex flex-col md:flex-row md:items-center md:justify-between mt-4 md:mt-2 space-y-4 md:space-y-0">
+            <!-- Language Selector -->
+            <div class="flex items-center gap-2">
                 <select onchange="location = this.value" class="text-sm bg-gray-700 text-white rounded px-2 py-1">
                     <option value="{{ url('en') }}" {{ app()->getLocale() === 'en' ? 'selected' : '' }}>English</option>
                     <option value="{{ url('my') }}" {{ app()->getLocale() === 'my' ? 'selected' : '' }}>မြန်မာ</option>
                 </select>
             </div>
-            
-            <div class="flex items-center gap-4">
-                <!-- Navigation Links -->
+
+            <!-- Main Links -->
+            <nav class="flex flex-col md:flex-row gap-2 md:gap-4 text-gray-200">
+                <a href="{{ route('about') }}" class="hover:text-blue-400">About</a>
+                <a href="{{ route('blog.index') }}" class="hover:text-blue-400">Blogs</a>
+                <a href="{{ route('contact') }}" class="hover:text-blue-400">Contact</a>
+                <a href="{{ route('podcasts') }}" class="hover:text-blue-400">Podcasts</a>
+                <a href="{{ route('privacy') }}" class="hover:text-blue-400">Privacy</a>
+            </nav>
+
+            <!-- Auth Buttons -->
+            <div class="flex flex-col md:flex-row gap-2">
                 @auth
-                    <a href="{{ url('/dashboard') }}" class="inline-block px-5 py-1.5 border border-gray-600 text-gray-200 rounded-sm text-sm hover:border-gray-500 transition-colors">
+                    <a href="{{ url('/dashboard') }}" class="px-4 py-1.5 border border-gray-600 rounded-sm hover:border-gray-500 text-gray-200">
                         Dashboard
                     </a>
                 @else
-                    <a href="{{ route('login') }}" class="inline-block px-5 py-1.5 text-gray-200 border border-transparent rounded-sm text-sm hover:border-gray-600 transition-colors">
-                        Log in
-                    </a>
+                    <a href="{{ route('login') }}" class="px-4 py-1.5 hover:text-blue-400">Log in</a>
                     @if (Route::has('register'))
-                        <a href="{{ route('register') }}" class="inline-block px-5 py-1.5 border border-gray-600 text-gray-200 rounded-sm text-sm hover:border-gray-500 transition-colors">
+                        <a href="{{ route('register') }}" class="px-4 py-1.5 border border-gray-600 rounded-sm hover:border-gray-500 text-gray-200">
                             Register
                         </a>
                     @endif
                 @endauth
             </div>
-        @endif
+        </div>
+    @endif
     </header>
+
+    <!-- Toggle Script -->
+    <script>
+        document.getElementById('hamburger-button').addEventListener('click', function () {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+    </script>
+
 
     <div class="w-full max-w-6xl text-center">
         <!-- Hero Section -->
@@ -78,31 +111,44 @@
         </div>
 
         <!-- Features Section -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+            <div class="bg-gray-700 bg-opacity-80 border border-gray-600 rounded-lg p-8 transition-all duration-300 hover:-translate-y-1 hover:border-blue-400 hover:shadow-lg hover:shadow-blue-400/10">
+                <div class="text-4xl mb-4">🤖</div>
+                <h3 class="text-xl font-semibold text-gray-200 mb-3">AI-Powered Personality & Career Test</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Take our AI-driven personality test and discover your ideal career pathway. 
+                    Our algorithm considers your strengths, interests, and skills to recommend 
+                    the best career fit for you.
+                </p>
+            </div>
+            
+            <div class="bg-gray-700 bg-opacity-80 border border-gray-600 rounded-lg p-8 transition-all duration-300 hover:-translate-y-1 hover:border-blue-400 hover:shadow-lg hover:shadow-blue-400/10">
+                <div class="text-4xl mb-4">👩‍🏫</div>
+                <h3 class="text-xl font-semibold text-gray-200 mb-3">Mentors & Coaching</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Get personalized guidance from experienced mentors and coaches. 
+                    Our mentors are industry experts who provide valuable insights and support 
+                    to help you achieve your career goals.
+                </p>
+            </div>
+            
             <div class="bg-gray-700 bg-opacity-80 border border-gray-600 rounded-lg p-8 transition-all duration-300 hover:-translate-y-1 hover:border-blue-400 hover:shadow-lg hover:shadow-blue-400/10">
                 <div class="text-4xl mb-4">📚</div>
-                <h3 class="text-xl font-semibold text-gray-200 mb-3">Quality Education</h3>
+                <h3 class="text-xl font-semibold text-gray-200 mb-3">Multimedia Learning Hub</h3>
                 <p class="text-gray-400 text-sm leading-relaxed">
-                    Access expertly curated courses and learning materials designed by industry professionals 
-                    to help you master new skills and advance your knowledge.
+                    Access a vast library of multimedia learning resources, including videos, 
+                    podcasts, articles, and more. Our learning hub is designed to help you 
+                    learn new skills and advance your knowledge.
                 </p>
             </div>
             
             <div class="bg-gray-700 bg-opacity-80 border border-gray-600 rounded-lg p-8 transition-all duration-300 hover:-translate-y-1 hover:border-blue-400 hover:shadow-lg hover:shadow-blue-400/10">
-                <div class="text-4xl mb-4">💼</div>
-                <h3 class="text-xl font-semibold text-gray-200 mb-3">Career Development</h3>
+                <div class="text-4xl mb-4">🌎</div>
+                <h3 class="text-xl font-semibold text-gray-200 mb-3">Multilingual Support</h3>
                 <p class="text-gray-400 text-sm leading-relaxed">
-                    Get personalized career guidance, resume building tools, and connect with potential 
-                    employers to accelerate your professional growth.
-                </p>
-            </div>
-            
-            <div class="bg-gray-700 bg-opacity-80 border border-gray-600 rounded-lg p-8 transition-all duration-300 hover:-translate-y-1 hover:border-blue-400 hover:shadow-lg hover:shadow-blue-400/10">
-                <div class="text-4xl mb-4">🌐</div>
-                <h3 class="text-xl font-semibold text-gray-200 mb-3">Global Community</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">
-                    Join our vibrant community of learners and professionals from around the world. 
-                    Network, collaborate, and grow together.
+                    As an open-source project, our platform supports multiple languages. 
+                    This means that developers from any ethnic background can contribute to 
+                    our project repository and help us make a positive impact globally.
                 </p>
             </div>
         </div>

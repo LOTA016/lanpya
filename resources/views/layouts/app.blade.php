@@ -14,6 +14,68 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
+        <style>
+                .animate__animated {
+                    animation-duration: 0.5s;
+                    animation-fill-mode: both;
+                }
+
+                .animate__fadeIn {
+                    animation-name: fadeIn;
+                }
+
+                .animate__fadeInDown {
+                    animation-name: fadeInDown;
+                }
+
+                .animate__fadeInUp {
+                    animation-name: fadeInUp;
+                }
+
+                .animate__spin {
+                    animation-name: spin;
+                }
+
+                @keyframes fadeIn {
+                    from {
+                        opacity: 0;
+                    }
+                    to {
+                        opacity: 1;
+                    }
+                }
+
+                @keyframes fadeInDown {
+                    from {
+                        opacity: 0;
+                        transform: translate3d(0, -100%, 0);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translate3d(0, 0, 0);
+                    }
+                }
+
+                @keyframes fadeInUp {
+                    from {
+                        opacity: 0;
+                        transform: translate3d(0, 100%, 0);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translate3d(0, 0, 0);
+                    }
+                }
+
+                @keyframes spin {
+                    from {
+                        transform: rotate(0deg);
+                    }
+                    to {
+                        transform: rotate(360deg);
+                    }
+                }
+        </style>
         <!-- Styles -->
         @livewireStyles
     </head>
@@ -26,9 +88,9 @@
             <!-- Page Heading -->
             @if (isset($header))
                 <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                    <!-- <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                         {{ $header }}
-                    </div>
+                    </div> -->
                 </header>
             @endif
 
