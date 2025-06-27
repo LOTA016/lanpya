@@ -4,6 +4,31 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ __('welcome.title') }}</title>
+
+    <title>{{ config('app.name', 'Lan Pya') }}</title>
+
+    <!-- ✅ Meta Tags for SEO -->
+    <meta name="description" content="Lan Pya is a youth-driven platform empowering Myanmar learners and job seekers through mentorship, career guidance, and skill development.">
+    <meta name="keywords" content="Lan Pya, Myanmar Mentorship, Youth Empowerment, Career Guidance, Education Platform, Mentors, Learning">
+    <meta name="author" content="Lan Pya Team">
+    <meta name="robots" content="index, follow">
+
+    <!-- ✅ Open Graph Tags -->
+    <meta property="og:title" content="Lan Pya – Empowering Myanmar Youth through Mentorship & Learning">
+    <meta property="og:description" content="Connect with mentors, discover your career path, and grow with Lan Pya, a platform designed to uplift Myanmar youth.">
+    <meta property="og:image" content="{{ asset('favicon.png') }}">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Lan Pya">
+
+    <!-- ✅ Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Lan Pya – Mentorship for Myanmar Youth">
+    <meta name="twitter:description" content="Join Lan Pya for career growth, mentorship, and lifelong learning opportunities tailored for Myanmar youth.">
+    <meta name="twitter:image" content="{{ asset('/logo/favicon.png') }}">
+
+    <!-- ✅ Favicon -->
+    <link rel="icon" href="{{ asset('assets/logo/lanpya-top.png') }}" type="image/png" sizes="192x192">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -34,7 +59,9 @@
         <!-- Top bar -->
         <div class="flex justify-between items-center md:flex-row flex-wrap gap-4">
             <!-- Logo or title -->
-            <div class="text-lg font-semibold text-blue-400">Lan Pya</div>
+            <div class="md:text-2xl text-lg font-semibold text-blue-400 flex items-center justify-center">
+                <img src="{{ asset('assets/logo/landscape-lanpya.png') }}" alt="Lan Pya Logo" class="h-12 md:h-16 w-auto">
+            </div>
 
             <!-- Hamburger button (mobile only) -->
             <button id="hamburger-button" class="md:hidden p-2 rounded-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-offset-2">
